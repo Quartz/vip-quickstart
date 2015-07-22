@@ -17,8 +17,7 @@ VIP Quickstart is a local development environment for WordPress.com VIP develope
 * `git clone https://github.com/Quartz/qz-api.git`
 * `vagrant ssh`
 * `wp theme activate vip/qz-api`
-* `wp qz_quickstart_helper import`
-* `wp qz_quickstart_helper queue`
+* `wp qz_quickstart_helper setup`
 
 ## What You Get
 
