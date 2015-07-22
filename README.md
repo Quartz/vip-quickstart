@@ -1,10 +1,23 @@
-![VIP Quickstart](http://vip.wordpress.com/wp-content/themes/a8c/wpcomvip3/img/illustrations/developmenttools-03.svg)
-
-For full documentation, see [http://vip.wordpress.com/documentation/quickstart/](http://vip.wordpress.com/documentation/quickstart/).
-
 ## Overview
 
 VIP Quickstart is a local development environment for WordPress.com VIP developers. The goal is to provide developers with an environment that closely mirrors WordPress.com along with all the tools we recommend developers use.
+
+## Requirements
+
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [Vagrant](http://www.vagrantup.com/downloads.html)
+
+## Setup
+
+* Set `10.86.73.80 qz.dev` in `/etc/hosts`
+* `git clone --recursive https://github.com/Quartz/vip-quickstart.git`
+* `cd vip-quickstart`
+* `vagrant up`
+* `cd www/wp-content/themes/vip/qz-api`
+* `git clone https://github.com/Quartz/qz-api.git`
+* `vagrant ssh`
+* `wp theme activate vip/qz-api`
+* `wp qz_quickstart_helper setup`
 
 ## What You Get
 
