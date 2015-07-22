@@ -15,7 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.hostname = 'qz.dev'
   config.vm.network :private_network, ip: "10.86.73.80"
-  config.vm.synced_folder '.', '/vagrant', nfs: true
 
   # Virtualbox overrides
   config.vm.provider "virtualbox" do |v|
@@ -32,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
   end
 
-  config.vm.synced_folder ".", "/srv", owner: 'www-data', group: 'www-data', mount_options: ["dmode=775", "fmode=664"]
+  config.vm.synced_folder ".", "/srv", owner: 'www-data', group: 'www-data', mount_options: ["dmode=775", "fmode=664"], nfs: true
 
   # Address a bug in an older version of Puppet
   # See http://stackoverflow.com/questions/10894661/augeas-support-on-my-vagrant-machine
