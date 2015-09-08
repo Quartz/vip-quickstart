@@ -48,7 +48,7 @@ if ( ! defined( 'WPLANG' ) ) {
 	define( 'WPLANG', '' );
 }
 
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', 0 );
 define( 'SAVEQUERIES', true );
 
 if ( ! defined( 'JETPACK_DEV_DEBUG' ) ) {

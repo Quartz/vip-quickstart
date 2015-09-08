@@ -8,7 +8,7 @@ define( 'DISALLOW_UNFILTERED_HTML', true );
 /**
  * Disable file editing and WordPress updates
  */
-define('DISALLOW_FILE_MODS', true);
+#define('DISALLOW_FILE_MODS', true);
 
 /**
  * (Sort-of) Compat with wpcom-geo config

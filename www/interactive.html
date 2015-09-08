@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>iFrame</title>
+	<style>
+		body {
+			text-align: center;
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+<h1>Hello World</h1>
+
+<p>
+	<a href="#" class="height">Update Height</a>
+</p>
+
+<p>
+	<a href="#" class="hash">Update Hash</a>
+</p>
+<p>
+	<a href="#" class="enableFullscreen">Enable Fullscreen</a>
+</p>
+<p>
+	<a href="#" class="enter">Enter Fullscreen</a>
+</p>
+
+<p>
+	<a href="#" class="exit">Exit Fullscreen</a>
+</p>
+
+<p>
+	<a href="#" class="scroll">Scroll 200px</a>
+</p>
+
+<button id="scroll-to-me">Scroll To Me</button>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="http://app.qz.dev/js/libs/frameMessager.js"></script>
+<script>
+	$(document).ready(function(){
+
+		var FM = new frameMessager( {
+			requestHeight: {
+				desktop: 600
+			}
+		});
+
+		/*
+		 FM.triggerMessage( 'QZParent', 'child:register', {
+		 url: window.location.href,
+		 requestHeight: {
+		 desktop: 600
+		 }
+		 });
+		 */
+
+		$('a.height').click(function(e){
+			e.preventDefault();
+
+			FM.triggerMessage( 'QZParent', 'child:updateHeight', { height: 800 } );
+		});
+
+		$('a.hash').click(function(e){
+			e.preventDefault();
+			FM.triggerMessage( 'QZParent', 'child:updateHash', { hash: 'expanded'} );
+		});
+
+		$('a.enter').click(function(e){
+			e.preventDefault();
+			FM.triggerMessage( 'QZParent', 'child:fullWindow', { fullscreen: 'enter'} );
+		});
+
+		$('a.exit').click(function(e){
+			e.preventDefault();
+			FM.triggerMessage( 'QZParent', 'child:fullWindow', { fullscreen: 'exit'} );
+		});
+
+		$('a.enableFullscreen').click(function(e){
+			e.preventDefault();
+			FM.triggerMessage( 'QZParent', 'child:makeEngageExpandable' );
+		});
+
+		$('a.scroll').click(function(e){
+			e.preventDefault();
+			FM.triggerMessage( 'QZParent', 'child:scrollToPosition', { position: 200 } );
+		})
+
+		$('#scroll-to-me').click(function(e){
+			e.preventDefault();
+			FM.triggerMessage( 'QZParent', 'child:scrollToPosition', {
+				selector: '#interative193560',
+				offset: $(this).offset().top
+			});
+		});
+
+		//console.log( FM );
+	});
+</script>
+</body>
+</html>

@@ -6,3 +6,6 @@
 
 # Enables local modifications
 wp-cli.local.yml
+
+# Other
+.DS_Store
