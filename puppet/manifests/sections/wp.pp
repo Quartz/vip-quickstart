@@ -85,6 +85,15 @@ $wp_content_dirs = [
   '/srv/www/wp-content/uploads',
 ]
 
+file { '/srv/www/wp-content':
+    ensure  => directory,
+    recurse => false,
+    mode    => 0775,
+    owner   => 'www-data',
+    group   => 'www-data',
+}
+
+
 file { $wp_content_dirs:
     ensure  => directory,
     recurse => true,
@@ -96,7 +105,7 @@ file { $wp_content_dirs:
 # VCS Checkout
 vcsrepo { '/srv/www/wp':
   ensure   => latest,
-  source   => 'http://core.svn.wordpress.org/trunk/',
+  source   => 'https://core.svn.wordpress.org/trunk/',
   provider => svn,
 }
 
@@ -126,7 +135,7 @@ vcsrepo { '/srv/www/wp-content/themes/pub/twentyfifteen':
 
 vcsrepo { '/srv/www/wp-tests':
   ensure   => latest,
-  source   => 'http://develop.svn.wordpress.org/trunk/',
+  source   => 'https://develop.svn.wordpress.org/trunk/',
   provider => svn,
 }
 
