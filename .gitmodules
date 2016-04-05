@@ -28,6 +28,3 @@
 [submodule "puppet/modules/ssh"]
 	path = puppet/modules/ssh
 	url = https://github.com/attachmentgenie/attachmentgenie-ssh.git
-[submodule "www/wp-content/themes/vip/qz-api"]
-	path = www/wp-content/themes/vip/qz-api
-	url = https://github.com/Quartz/qz-api.git
