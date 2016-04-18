@@ -4,6 +4,9 @@
 # Because this really is a working directory, ignore vagrant's files
 /.vagrant
 
+# Our theme is tracked in its own git repo
+/www/wp-content/themes/vip/qz-api/
+
 # Enables local modifications
 wp-cli.local.yml
 
